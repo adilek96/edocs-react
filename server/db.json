@@ -1,0 +1,73 @@
+{
+  "goods": [
+    {
+      "code": "00001",
+      "name": "Noutbuk",
+      "goodstype": "Əsas vəsait. aktvi",
+      "parent": "Əsas vəsait"
+    },
+    {
+      "code": "00002",
+      "name": "Moloko",
+      "goodstype": "Xammal",
+      "parent": " "
+    },
+
+    {
+      "code": "00003",
+      "name": "Qazsiz Su",
+      "goodstype": "Xammal",
+      "parent": " "
+    },
+    {
+      "code": "00004",
+      "name": "Proqraming Xidmetler",
+      "goodstype": "Xidmet",
+      "parent": " "
+    }
+  ],
+
+  "dataFromClientsAPI": [
+    {
+      "code": 7,
+      "name": "AZERİQAZ",
+      "taxNumber": "9900001621",
+      "clientType": "Juridical"
+    },
+
+    {
+      "code": 8,
+      "name": "AZƏRİŞIQ AÇIQ SƏHMDAR CƏMİYYƏTİ",
+      "taxNumber": "9900069391",
+      "clientType": "Juridical"
+    },
+    {
+      "code": 9,
+      "name": "AZƏRSU AÇIQ SƏHMDAR CƏMİYYƏTİ",
+      "taxNumber": "9900001751",
+      "clientType": "Juridical"
+    }
+  ],
+
+  "productBarCode": [
+    {
+      "productId": 1,
+      "id": 1,
+      "productName": "Noutbuk",
+      "barcode": "9900001621"
+    },
+
+    {
+      "productId": 1,
+      "id": 2,
+      "productName": "Noutbuk",
+      "barcode": "2000014054639"
+    },
+    {
+      "productId": 3,
+      "id": 654654,
+      "productName": "Qazsiz Su",
+      "barcode": "122223300000"
+    }
+  ]
+}
