@@ -5,7 +5,7 @@ import React from "react";
 import {
   AreaChart,
   Area,
-  XAxis,
+  XAxis, 
   YAxis,
   CartesianGrid,
   Tooltip,
