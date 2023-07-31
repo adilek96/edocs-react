@@ -20,11 +20,10 @@ const ProductsList = () => {
 
   const { data = [], isLoading } = useGetGoodsQuery(limitPerPage);
  
-
   
-  
-
   if (isLoading) return <h1>Loading....</h1>;
+
+  console.log(data)
   
   const dataFromApi = [...data];
 
@@ -43,9 +42,9 @@ const ProductsList = () => {
         </td>
   
         <td className="border-r-2 border-gray-200  pl-1 underline cursor-pointer">
-          <Link to={item.code}>{item.code}-{item.name}</Link>
+          <Link to={item.code}>{item.name}</Link>
         </td>
-        <td>{item.goodstype}</td>
+        <td>{item.type}</td>
         <td className="border-l-2 border-gray-200 ">
           <button type="button">
             <RiDeleteBin2Line className="w-6 h-6 mt-1  text-gray-500 hover:text-red-600" />

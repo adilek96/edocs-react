@@ -37,50 +37,38 @@ function h1Title(productID) {
 }
 
 const ProductCard = () => {
-  
   const [file, setFile] = useState(null);
   // const [productName, setProductName] = useState("");
-      ////////////////////
+  ////////////////////
   //**Тут работаем с полями Input основной формы */
-  const [productNameInput, setProductNameInput] = useState(
+  const [productNameInput, setProductNameInput] =
+    useState();
     // returndataFromGoodsApi().name
-  );
 
-    ///// Получаем ID элемента, при открытии страницы.
-    const { productID } = useParams();
+  ///// Получаем ID элемента, при открытии страницы.
+  const { productID } = useParams();
 
-    //////////////////////////////////////////////////////////////////////////
-    //**"Получаем все товары из базы." */
-   
-    const [limitPerPage] = useState(null);
-    const { data = [], isLoading } = useGetGoodsQuery(limitPerPage);
-  
-     //**Показываем что идет загрузка, пока получаем все товары из базы." */
-    if (isLoading) return <h1>Loading....</h1>;
+  //////////////////////////////////////////////////////////////////////////
+  //**"Получаем все товары из базы." */
 
-    const dataFromApi = [...data];
-   
-   
-   
-  
-    //** Это получение данных из API файла с Goods. */
-    const findedGoodData = dataFromApi.find(function (item) {
-     
-      return item.code === productID;
-     
+  const [limitPerPage] = useState(null);
+  const { data = [], isLoading } = useGetGoodsQuery(limitPerPage);
 
-    });
-    
-  
-    function returndataFromGoodsApi() {
-      if (findedGoodData !== undefined) {
-        return findedGoodData;
-      }
-      return "";
-    };
-    console.log(findedGoodData);
+  //**Показываем что идет загрузка, пока получаем все товары из базы." */
+  if (isLoading) return <h1>Loading....</h1>;
 
+  const dataFromApi = [...data];
 
+  //** Это получение данных из API файла с Goods. */
+  const findedGoodData = dataFromApi.find((item) => item.code === productID);
+
+  function returndataFromGoodsApi() {
+    if (findedGoodData) {
+      return findedGoodData;
+    }
+    return "";
+  }
+  console.log(findedGoodData);
 
   const handleProductPictureChange = (event) => {
     setFile(event.target.files[0]);
@@ -138,7 +126,9 @@ const ProductCard = () => {
                     placeholder="Good or service name...."
                     className="text-amber-900 border rounded-md w-[100%] pl-1 focus:outline-none  focus:border-blue-900 laceholder:font-thin italic"
                     value={productNameInput}
-                    onChange={(event) => setProductNameInput(event.target.value)}
+                    onChange={(event) =>
+                      setProductNameInput(event.target.value)
+                    }
                   />
                 </div>
 
@@ -151,7 +141,9 @@ const ProductCard = () => {
                     placeholder="Good or service name...."
                     className="text-amber-900 border rounded-md w-[100%] pl-1 focus:outline-none  focus:border-blue-900 laceholder:font-thin italic"
                     value={productNameInput}
-                    onChange={(event) => setProductNameInput(event.target.value)}
+                    onChange={(event) =>
+                      setProductNameInput(event.target.value)
+                    }
                   />
                 </div>
 
