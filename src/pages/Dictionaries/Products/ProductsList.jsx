@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useGetGoodsQuery } from "../../../redux";
+import { Link } from "react-router-dom";
 
 import Sidebar from "../../../components/sidebar/Sidebar";
 import TopBar from "../../../components/topBar/topBar";
@@ -7,54 +8,77 @@ import { AiOutlineCloseCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { FcOpenedFolder } from "react-icons/fc";
 import { RiDeleteBin2Line, RiFindReplaceLine } from "react-icons/ri";
 
-import { Link } from "react-router-dom";
-
-
+const textStyleDocIsDeleted = "line-through text-red-900";
+const textStyleDocNormal = "";
 
 const ProductsList = () => {
   const [searchInput, setSearchInput] = useState(null);
-
 
   //**"Запрашиваем сколько строк товаров хотим получить из базы." */
   const [limitPerPage, setLimitPerPage] = useState(null);
 
   const { data = [], isLoading } = useGetGoodsQuery(limitPerPage);
- 
-  
+
   if (isLoading) return <h1>Loading....</h1>;
 
-  console.log(data)
-  
+  console.log(data);
+
   const dataFromApi = [...data];
 
-  let resultApi = dataFromApi.map(function(item) {
-      return(
-        <tr
+  let resultApi = dataFromApi.map(function (item) {
+    return (
+      <tr
         className="border-b-2 border-gray-200 text-[#002060] text-center"
         key={item.code}
       >
         <td className="border-r-2 border-gray-200  pl-1 underline cursor-pointer">
-          {item.parent}
+          <div
+            className={
+              item.isDeleted ? textStyleDocIsDeleted : textStyleDocNormal
+            }
+          >
+            {item.parent}
+          </div>
         </td>
-  
+
         <td className="border-r-2 border-gray-200  pl-1">
-          {item.code}
+          <div
+            className={
+              item.isDeleted ? textStyleDocIsDeleted : textStyleDocNormal
+            }
+          >
+            {item.code}
+          </div>
         </td>
-  
+
         <td className="border-r-2 border-gray-200  pl-1 underline cursor-pointer">
-          <Link to={item.code}>{item.name}</Link>
+          <div
+            className={
+              item.isDeleted ? textStyleDocIsDeleted : textStyleDocNormal
+            }
+          >
+            <Link to={item.code}>{item.name}</Link>
+          </div>
         </td>
-        <td>{item.type}</td>
+
+        <td className="border-r-2 border-gray-200  pl-1">
+          <div
+            className={
+              item.isDeleted ? textStyleDocIsDeleted : textStyleDocNormal
+            }
+          >
+            {item.type}
+          </div>
+        </td>
+
         <td className="border-l-2 border-gray-200 ">
           <button type="button">
             <RiDeleteBin2Line className="w-6 h-6 mt-1  text-gray-500 hover:text-red-600" />
           </button>
         </td>
       </tr>
-      )
+    );
   });
-
-
 
   return (
     <div>
@@ -170,8 +194,6 @@ const ProductsList = () => {
               </thead>
               <tbody className=" border-2 text-sm border-solid border-gray-200 bg-white ">
                 {resultApi}
-               
-               
               </tbody>
             </table>
           </div>

@@ -8,8 +8,14 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import ProductBarCodes from "../Tables/ProductBarCodes";
 // import { useLocation } from "react-router-dom";
 
-export default function LabTabsForProductCard() {
+export default function LabTabsForProductCard(data) {
   const [value, setValue] = React.useState("1");
+  const [productTaxesCodeInput, setProductTaxesCodeInput] = React.useState(data.dataOfProduct.code);
+
+  console.log(productTaxesCodeInput)
+
+
+  
 
   //////Определяем текущую локацию страницы.
   // const location = useLocation();
@@ -53,13 +59,18 @@ export default function LabTabsForProductCard() {
                 </TabList>
               </Box>
 
-            
-            
               <TabPanel value="1">
                 <span className=" text-[#002060]">Vergi kodu:</span>
-                <input type="number" name="productTaxesCode" id="productTaxesCode" 
-                className="ml-2 pl-1 text-amber-900 border rounded-md w-[10rem] 
-                focus:outline-none  focus:border-blue-900 placeholder:font-thin italic"/>
+                <input
+                  type="text"
+                  name="productTaxesCode"
+                  id="productTaxesCode"
+                  defaultValue={productTaxesCodeInput}
+                  onChange={(event) => setProductTaxesCodeInput(event.target.value)}
+                  className="ml-2 pl-1 text-amber-900 border rounded-md w-[10rem] 
+                focus:outline-none  focus:border-blue-900 placeholder:font-thin italic"
+                />
+             
               </TabPanel>
               <TabPanel value="1">Item One</TabPanel>
               <TabPanel value="1">Item One</TabPanel>
@@ -70,8 +81,11 @@ export default function LabTabsForProductCard() {
               </TabPanel>
             </TabContext>
           </Box>
+          
+          
         </div>
       </div>
+   
     </>
   );
 }
