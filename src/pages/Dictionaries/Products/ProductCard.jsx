@@ -19,7 +19,7 @@ const btnCancelStyle =
 ////////////////////////////////////
 
 const ProductCard = () => {
-   const [file, setFile] = useState(null);
+  //  const [file, setFile] = useState(null); //**Это для загрузки картинок. */
 
   ///// Получаем ID элемента, при открытии страницы.
   const { productID } = useParams();
@@ -61,9 +61,9 @@ const ProductCard = () => {
     );
   }
 
-  const handleProductPictureChange = (event) => {
-    setFile(event.target.files[0]);
-  };
+  // const handleProductPictureChange = (event) => {
+  //   setFile(event.target.files[0]);
+  // };
   // const readFile = () => {
   //   const reader = new FileReader();
   //   reader.onload = () => console.log(reader.result);
@@ -250,7 +250,9 @@ const ProductCard = () => {
                 <div className="mt-5 bg-gray-100 h-48 flex justify-center items-center rounded-md">
                   <div>
                     <MdOutlineAddAPhoto className="h-28 w-28 border-1 rounded-xl cursor-pointer text-gray-300" />
-                    <input type="file" onChange={handleProductPictureChange} />
+                    <input type="file" 
+                    // onChange={handleProductPictureChange} 
+                    />
                   </div>
                 </div>
                 {/* <button onClick={readFile}>Загрузить изображение</button> */}
