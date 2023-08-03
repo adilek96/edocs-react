@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-const linkURL = "http://app.hesabdar.az/EDOCS/hs/"; //'http://localhost:3001/'
+const linkURL = "http://app.hesabdar.az/EDOCS/hs/";
 
 export const goodsApi = createApi({
     //**Это название как будет отображаться в нашем общем store. */

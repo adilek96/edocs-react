@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useGetGoodsQuery } from "../../../redux";
-import { useParams } from "react-router-dom";
+import {  useNavigate , useParams, Link } from "react-router-dom";
 
 import TopBar from "../../../components/topBar/topBar";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import { MdOutlineAddAPhoto } from "react-icons/md";
 import { ImList2 } from "react-icons/im";
 import LabTabsForProductCard from "../../../components/Labs/LabTabsForProductCard";
+
+
 
 //  Тут живут ОБЩИЕ стили дизайна.
 const btnSubmitStyle =
@@ -18,11 +20,21 @@ const btnCancelStyle =
 
 ////////////////////////////////////
 
+const listURL = '/products';
+//////////////////////////////////
+
 const ProductCard = () => {
   //  const [file, setFile] = useState(null); //**Это для загрузки картинок. */
 
   ///// Получаем ID элемента, при открытии страницы.
   const { productID } = useParams();
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+  // Закрытие текущей страницы
+    navigate(listURL);
+  };
+  
 
   //////////////////////////////////////////////////////////////////////////
   //**"Получаем все товары из базы." */
@@ -88,7 +100,8 @@ const ProductCard = () => {
             {/* //*************** Это кнопки Формы */}
             <div className=" bg-white flex p-4 border-b-2 ">
               <div className="pr-2 ">
-                <button type="submit" id="btnSubmit" className={btnSubmitStyle}>
+                <button type="submit" id="btnSubmit" className={btnSubmitStyle}
+                onClick={handleClick}>
                   OK
                 </button>
               </div>
@@ -100,9 +113,14 @@ const ProductCard = () => {
               </div>
 
               <div className="pr-2 ">
-                <button type="cancel" id="btnCancel" className={btnCancelStyle}>
-                  Cancel
+              <Link to={listURL} rel="stylesheet">
+                <button
+                  type="cancel"
+                  id="btnCancel"
+                  className={btnCancelStyle}>
+                 Cancel
                 </button>
+                </Link>
               </div>
             </div>
             {/* //////////////////////////////////////////////// */}
@@ -141,12 +159,10 @@ const ProductCard = () => {
                       focus:outline-none  focus:border-blue-900 placeholder:font-thin italic "
                   >
                     <option className="text-[#002060]">
-                    {returndataFromGoodsApi().type}
+                      {returndataFromGoodsApi().type}
                     </option>
 
-                    <option className="text-[#002060]">
-                     
-                    </option>
+                    <option className="text-[#002060]"></option>
                   </select>
                 </div>
                 <div flex className="pt-2">
@@ -216,7 +232,7 @@ const ProductCard = () => {
                     id="productId"
                     className="ml-2 pl-1 text-amber-900 border rounded-md w-[10rem] 
                     focus:outline-none  focus:border-blue-900 placeholder:font-thin italic "
-                     value={returndataFromGoodsApi().code}
+                    value={returndataFromGoodsApi().code}
                   />
                 </div>
 
@@ -250,8 +266,9 @@ const ProductCard = () => {
                 <div className="mt-5 bg-gray-100 h-48 flex justify-center items-center rounded-md">
                   <div>
                     <MdOutlineAddAPhoto className="h-28 w-28 border-1 rounded-xl cursor-pointer text-gray-300" />
-                    <input type="file" 
-                    // onChange={handleProductPictureChange} 
+                    <input
+                      type="file"
+                      // onChange={handleProductPictureChange}
                     />
                   </div>
                 </div>
@@ -262,7 +279,7 @@ const ProductCard = () => {
 
             {/* Это закладки"*/}
 
-            <LabTabsForProductCard dataOfProduct={returndataFromGoodsApi()}/>
+            <LabTabsForProductCard dataOfProduct={returndataFromGoodsApi()} />
             {/* /////////////////////////// */}
           </div>
         </form>
