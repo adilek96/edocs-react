@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { useGetGoodsQuery } from "../../../redux";
+import { useAddProductMutation, useGetGoodsQuery } from "../../../redux";
 import {  useNavigate , useParams, Link } from "react-router-dom";
+
 
 import TopBar from "../../../components/topBar/topBar";
 import Sidebar from "../../../components/sidebar/Sidebar";
@@ -20,20 +21,36 @@ const btnCancelStyle =
 
 ////////////////////////////////////
 
-const listURL = '/products';
+const listURL = "/products";
 //////////////////////////////////
 
 const ProductCard = () => {
+  ////** Сохранение данных. Метод POST на API внешнего сервера. */
+  const [addProduct] = useAddProductMutation();
+  const [productName, setProductName] = useState();
+  const navigate = useNavigate();
+
+  const handleAddProduct = async () =>{
+    if(productName){
+      await addProduct({name: productName}).unwrap();
+      // Закрытие текущей страницы
+    
+    }
+    navigate("/products");
+  }
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
   //  const [file, setFile] = useState(null); //**Это для загрузки картинок. */
 
   ///// Получаем ID элемента, при открытии страницы.
   const { productID } = useParams();
-  const navigate = useNavigate();
+  
 
-  const handleClick = () => {
-  // Закрытие текущей страницы
-    navigate(listURL);
-  };
+
   
 
   //////////////////////////////////////////////////////////////////////////
@@ -100,8 +117,8 @@ const ProductCard = () => {
             {/* //*************** Это кнопки Формы */}
             <div className=" bg-white flex p-4 border-b-2 ">
               <div className="pr-2 ">
-                <button type="submit" id="btnSubmit" className={btnSubmitStyle}
-                onClick={handleClick}>
+                <button  className={btnSubmitStyle}
+                onClick={handleAddProduct}>
                   OK
                 </button>
               </div>
@@ -134,7 +151,8 @@ const ProductCard = () => {
                     id="ProductName"
                     placeholder="Good or service name...."
                     className="text-amber-900 border rounded-md w-[100%] pl-1 focus:outline-none  focus:border-blue-900 laceholder:font-thin italic"
-                    value={returndataFromGoodsApi().name}
+                    defaultValue={returndataFromGoodsApi().name}//{}
+                    onChange={(event) => setProductName(event.target.value)}
                   />
                 </div>
 

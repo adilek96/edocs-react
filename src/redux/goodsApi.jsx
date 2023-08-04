@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-const linkURL = "http://app.hesabdar.az/EDOCS/hs/";
+const linkURL ='http://localhost:3001/'; //"http://app.hesabdar.az/EDOCS/hs/";
 
 export const goodsApi = createApi({
     //**Это название как будет отображаться в нашем общем store. */
@@ -11,8 +11,15 @@ export const goodsApi = createApi({
             //**limit - это количество запрашиваемых данных. */
             //query: (limit = '') =>`products`,
             query: (limit = '') =>`products?${limit && `_limit=${limit}`}`,
-        })
+        }),
+        addProduct: build.mutation({
+            query: (body) =>({
+                url: 'products',
+                method: 'POST',
+                body,
+            })
+        }),
     })
 });
 
-export const {useGetGoodsQuery} = goodsApi;
+export const {useGetGoodsQuery, useAddProductMutation} = goodsApi;

@@ -1,32 +1,69 @@
 {
-  "goods": [
+  "products": [
     {
+      "id": 1,
       "code": "00001",
       "name": "Noutbuk",
       "goodstype": "Əsas vəsait. aktvi",
       "parent": "Əsas vəsait"
     },
     {
+      "id": 2,
       "code": "00002",
       "name": "Moloko",
       "goodstype": "Xammal",
       "parent": " "
     },
-
     {
+      "id": 3,
       "code": "00003",
       "name": "Qazsiz Su",
       "goodstype": "Xammal",
       "parent": " "
     },
     {
+      "id": 4,
       "code": "00004",
       "name": "Proqraming Xidmetler",
       "goodstype": "Xidmet",
       "parent": " "
+    },
+    {
+      "id": "5",
+      "code": "00002222",
+      "name": "asdasdadasd",
+      "goodstype": " ",
+      "parent": " "
+    },
+    {
+      "name": "231as32d12asdasdasd",
+      "id": "_2W2TYO"
+    },
+    {
+      "name": "kkkkkkk",
+      "id": "tILDN8Q"
+    },
+    {
+      "name": "8888888",
+      "id": "yJn2AkK"
+    },
+    {
+      "name": "231231321311",
+      "id": "OdjPH_s"
+    },
+    {
+      "name": "sdfdsfsdfdsf",
+      "id": "VJTDPph"
+    },
+    {
+      "name": "aaaaa",
+      "id": "6pCu9ZH"
+    },
+    {
+      "name": "asdasdasdasd",
+      "id": "9KJ6W5u"
     }
   ],
-
   "dataFromClientsAPI": [
     {
       "code": 7,
@@ -34,7 +71,6 @@
       "taxNumber": "9900001621",
       "clientType": "Juridical"
     },
-
     {
       "code": 8,
       "name": "AZƏRİŞIQ AÇIQ SƏHMDAR CƏMİYYƏTİ",
@@ -48,7 +84,6 @@
       "clientType": "Juridical"
     }
   ],
-
   "productBarCode": [
     {
       "productId": 1,
@@ -56,7 +91,6 @@
       "productName": "Noutbuk",
       "barcode": "9900001621"
     },
-
     {
       "productId": 1,
       "id": 2,
