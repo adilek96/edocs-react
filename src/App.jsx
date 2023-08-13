@@ -9,6 +9,9 @@ import Single from "./pages/single/Single";
  import New from "./pages/new/PersonalCard_new";
 import PersonalCardNew from "./pages/new/PersonalCard_new";
 
+import StockList from './pages/Dictionaries/Stocks/StocksList'
+import StockForm from './pages/Dictionaries/Stocks/StockCard'
+
 // import NewClient from "./pages/new/NewClient";
 // import SingleClient from "./pages/new/SingleClient";
 // import PurchaseDocumentsList from "./pages/lists/PurchaseDocumentsList";
@@ -60,6 +63,12 @@ function App() {
             <Route index element={<List />} />
             <Route path=":invoiceID" element={<Single />} />
             <Route path="new" element={<New />} />
+          </Route>
+
+          <Route path="stocks/*">
+            <Route index element={<StockList />} />
+            <Route path=":invoiceID" element={<StockForm />} />
+            <Route path="new" element={<StockForm />} />
           </Route>
 
           <Route path="hr_documents/*">
