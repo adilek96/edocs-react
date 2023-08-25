@@ -111,6 +111,139 @@
       "productName": "Qazsiz Su",
       "barcode": "122223300000"
     }
+  ],
+  "stocks": [
+    {
+      "id": 1,
+      "code": "000000001",
+      "name": "Əsas anbar",
+      "isDeleted": false,
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 2,
+      "code": "000000002",
+      "name": "Əsas anbar",
+      "isDeleted": false,
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 3,
+      "code": "000000003",
+      "name": "Əsas anbar",
+      "isDeleted": false,
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 4,
+      "code": "000000004",
+      "name": "Əsas anbar",
+      "isDeleted": false,
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 5,
+      "code": "000000005",
+      "name": "Əsas anbar",
+      "isDeleted": false,
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 6,
+      "isDeleted": false,
+      "code": "000000006",
+      "name": "Əsas anbar",
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 7,
+      "isDeleted": false,
+      "code": "000000007",
+      "name": "Əsas anbar",
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 8,
+      "isDeleted": false,
+      "code": "000000008",
+      "name": "Əsas anbar",
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "xana",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 9,
+      "isDeleted": false,
+      "code": "000000009",
+      "name": "Əsas anbar",
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "neverland"
+    },
+    {
+      "id": 10,
+      "code": "000000010",
+      "name": "Əsas anbar",
+      "isDeleted": false,
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "D. Snow",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    },
+    {
+      "id": 11,
+      "code": "000000011",
+      "name": "Əsas anbar",
+      "isDeleted": true,
+      "parentСode": "000000001",
+      "parent": "Оптовые склады",
+      "responsPersonCode": "000000088",
+      "responsPerson": "Əliyev Əli",
+      "type": "Satış anbarı",
+      "organization": "CODEUM MMC"
+    }
   ]
- 
 }
